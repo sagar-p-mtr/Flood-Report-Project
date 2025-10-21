@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="welcome-section">
+    <h2>Welcome to the Flood Detection System</h2>
+    <p>Use this platform to report flood incidents in your city and help authorities respond faster.</p>
+    <div class="safety-tips">
+        <h3>Flood Safety Tips</h3>
+        <ul class="tips-list">
+            <li>Stay informed by monitoring local news and weather updates.</li>
+            <li>Avoid walking or driving through floodwaters.</li>
+            <li>Move to higher ground if flooding occurs in your area.</li>
+            <li>Keep emergency supplies ready, including food, water, and medical kits.</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fb;
+    color: #333;
+}
+
+.welcome-section {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 50px auto;
+    color: #3a3a3a;
+}
+
+.welcome-section h2 {
+    color: #2c3e50;
+}
+
+.safety-tips {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: #fdf3e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.safety-tips h3 {
+    color: #d35400;
+}
+
+.tips-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.tips-list li {
+    padding: 12px;
+    background-color: #ffffff;
+    border: 1px solid #e7e9eb;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.tips-list li:before {
+    content: "\2022";
+    color: #d35400;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-right: 10px;
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Detection System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <video class="video-bg" autoplay muted loop>
+        <source src="path-to-your-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Content Section -->
+    <div class="welcome-section">
+        <h2>Welcome to the Flood Detection System</h2>
+        <p>Use this platform to report flood incidents in your city and help authorities respond faster.</p>
+        <div class="safety-tips">
+            <h3>Flood Safety Tips</h3>
+            <ul class="tips-list">
+                <li>Stay informed by monitoring local news and weather updates.</li>
+                <li>Avoid walking or driving through floodwaters.</li>
+                <li>Move to higher ground if flooding occurs in your area.</li>
+                <li>Keep emergency supplies ready, including food, water, and medical kits.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

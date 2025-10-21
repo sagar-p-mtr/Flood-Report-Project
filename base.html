@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Detection Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #d3e3f3, #eef2f5);
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            color: #f0f3f4;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.2em;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: #f0f3f4;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.4s, border-bottom 0.4s;
+            padding-bottom: 5px;
+        }
+
+        nav a:hover {
+            color: #ffeb3b;
+            border-bottom: 2px solid #ffeb3b;
+        }
+
+        main {
+            padding: 50px;
+            max-width: 1100px;
+            margin: 60px auto;
+            background: #ffffff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 20px;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        main:hover {
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            transform: translateY(-5px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #4e54c8;
+            color: #f0f3f4;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+
+        /* Buttons */
+        button, .button-link {
+            background: linear-gradient(135deg, #ff8c00, #ff6347);
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 17px;
+            font-weight: 600;
+            margin: 20px 0;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: background 0.4s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        button:hover, .button-link:hover {
+            background: linear-gradient(135deg, #d35400, #c0392b);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        input[type="text"], textarea, input[type="file"] {
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid #bdc3c7;
+            border-radius: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus, textarea:focus, input[type="file"]:focus {
+            border-color: #4e54c8;
+            box-shadow: 0 0 8px rgba(78, 84, 200, 0.4);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* Animations and Transitions */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8em;
+            }
+
+            main {
+                padding: 30px;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.4em;
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 0.9em;
+            }
+
+            main {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="fade-in">
+        <h1>Flood Detection System</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a> |
+            <a href="{{ url_for('report_flood') }}">Report Flood</a> |
+            <a href="{{ url_for('contact') }}">Contact Authorities</a> |
+            <a href="{{ url_for('login') }}">Login</a> <!-- Added Login link -->
+        </nav>
+    </header>
+    <main class="fade-in">
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Flood Detection Project</p>
+    </footer>
+</body>
+</html>

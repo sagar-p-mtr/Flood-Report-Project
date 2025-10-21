@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="contact-authorities">
+    <h2>Contact Authorities</h2>
+    <p>If you notice a serious flood, please contact authorities at the following numbers:</p>
+    <ul class="contact-list">
+        <li><strong>Emergency Helpline:</strong> 123-456-7890</li>
+        <li><strong>Municipal Office:</strong> 098-765-4321</li>
+        <li><strong>Flood Control Office:</strong> 112-233-4455</li>
+        <li><strong>Disaster Management:</strong> 667-889-0011</li>
+    </ul>
+    <p>Stay safe and follow any instructions given by local authorities. It is crucial to stay informed and prepared during flood events.</p>
+    <p>For more information, you can visit the following resources:</p>
+    <ul class="resource-list">
+        <li><a href="https://www.ready.gov/floods" target="_blank">Ready.gov - Flood Safety</a></li>
+        <li><a href="https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/flood.html" target="_blank">Red Cross - Flood Preparation</a></li>
+        <li><a href="https://www.noaa.gov/floods" target="_blank">NOAA - Flood Updates</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+<style>
+.contact-authorities {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.contact-list, .resource-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.contact-list li, .resource-list li {
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    margin-bottom: 8px;
+    border-radius: 5px;
+}
+
+.contact-list li strong {
+    color: #0288d1;
+}
+
+.resource-list li a {
+    color: #0288d1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.resource-list li a:hover {
+    color: #ffcc00;
+}
+</style>

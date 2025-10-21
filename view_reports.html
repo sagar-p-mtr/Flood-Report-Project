@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Flood Reports</h2>
+    <div class="row">
+        {% for report in reports %}
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Location:</strong> {{ report.location }}</h5>
+                    <p class="card-text">
+                        <strong>Description:</strong> {{ report.description }}<br>
+                        <strong>Timestamp:</strong> {{ report.timestamp }}
+                    </p>
+                    {% if report.photo %}
+                        <img src="{{ url_for('static', filename='uploads/' + report.photo) }}" alt="Flood photo" class="img-fluid rounded" style="width: 100%; height: auto;">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+<style>
+    .container {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .card {
+        border: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    h2 {
+        color: #343a40;
+    }
+</style>
